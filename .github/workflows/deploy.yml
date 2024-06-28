@@ -1,0 +1,20 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your desired branch
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build and Deploy
+        run: |
+          cd /home/ross/docker/nginx-proxy-manager
+          docker-compose down
+          docker-compose up --build -d

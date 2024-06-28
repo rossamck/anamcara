@@ -10,10 +10,10 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
       },
       colors: {
-        primary: '#1d4ed8',
+        primary: '#61d2b2',
         secondary: '#9333ea',
         accent: '#10b981',
-        neutral: '#64748b',
+        neutral: '#1e899b',
       },
     },
   },
