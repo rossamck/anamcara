@@ -20,7 +20,7 @@ function Layout({ children }) {
         {children}
       </main>
       <footer className="bg-neutral text-white p-4 text-center font-roboto">
-        © 2024 Anamcara
+        © 2024 Anam Cara
       </footer>
     </div>
   );
