@@ -14,7 +14,7 @@ function NotFound() {
         <h1 className="text-6xl font-bold text-primary mb-4">404</h1>
         <p className="text-2xl text-neutral mb-4">Page Not Found</p>
         <a href="/" className="text-primary underline">
-          Go back to Home
+          Go back to Home!
         </a>
       </div>
     </motion.div>
