@@ -1,29 +1,57 @@
-//src/com
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import { HomeOutlined, MailOutlined } from '@ant-design/icons';
 
-function Layout({ children }) {
+const { Header, Content, Footer } = Layout;
+
+function AppLayout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 font-roboto">
-      <header className="bg-primary text-white p-4 shadow-md">
-        <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold font-caveat">Anam Cara Listening</div>
-          <div>
-            <Link className="mr-4 hover:text-gray-200" to="/">Home</Link>
-            <Link className="mr-4 hover:text-gray-200" to="/about">About</Link>
-            <Link className="hover:text-gray-200" to="/contact">Contact</Link>
+    <Layout className="min-h-screen bg-gray-50 font-roboto">
+      <Header className="bg-primary text-white shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center">
+            <Link to="/">
+              <div className="flex items-center">
+                <img
+                  src="/assets/logo_small_circle.png"
+                  alt="Anam Cara Listening"
+                  className="h-12 w-auto mr-2 object-contain"
+                />
+                <img
+                  src="/assets/logo_text.png"
+                  alt="Anam Cara Text"
+                  className="h-12 w-auto object-contain mt-1 hidden lg:block"
+                />
+                <img
+                  src="/assets/logo_text_stacked.png"
+                  alt="Anam Cara Text Stacked"
+                  className="h-12 w-auto object-contain mt-1 block lg:hidden"
+                />
+              </div>
+            </Link>
           </div>
-        </nav>
-      </header>
-      <main className="flex-grow container mx-auto p-4">
+          <Menu mode="horizontal" theme="dark" className="bg-primary flex ml-auto">
+            <Menu.Item key="home" icon={<HomeOutlined />}>
+              <Link to="/">Home</Link>
+            </Menu.Item>
+            {/* <Menu.Item key="about" icon={<InfoCircleOutlined />}>
+              <Link to="/about">About</Link>
+            </Menu.Item> */}
+            <Menu.Item key="contact" icon={<MailOutlined />}>
+              <Link to="/contact">Contact</Link>
+            </Menu.Item>
+          </Menu>
+        </div>
+      </Header>
+      <Content className="flex-grow container mx-auto p-4">
         {children}
-      </main>
-      <footer className="bg-neutral text-white p-4 text-center font-roboto">
+      </Content>
+      <Footer className="bg-neutral text-white p-4 text-center font-roboto">
         © 2024 Anam Cara
-      </footer>
-    </div>
+      </Footer>
+    </Layout>
   );
 }
 
-export default Layout;
+export default AppLayout;
